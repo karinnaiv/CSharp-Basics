@@ -1,0 +1,21 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int pens = int.Parse(Console.ReadLine());
+            int markers = int.Parse(Console.ReadLine());
+            int cleaning = int.Parse(Console.ReadLine());
+            int sale = int.Parse(Console.ReadLine());
+
+            double allMaterials = pens * 5.80 + markers * 7.20 + cleaning * 1.20;
+            double discountedAmount = allMaterials * (sale / 100.0);
+            double allMoneyAni = allMaterials - discountedAmount;
+
+            Console.WriteLine(allMoneyAni);
+        }
+    }
+}
