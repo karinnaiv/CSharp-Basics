@@ -1,0 +1,18 @@
+using System;
+
+namespace yardgardening
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double meters = double.Parse(Console.ReadLine());
+            double yard = meters * 7.61;
+            double discount = yard * 0.18;
+            double end = yard - discount;
+
+            Console.WriteLine($"The final price is: {end} lv.");
+            Console.WriteLine($"The discount is: {discount} lv.");
+        }
+    }
+}
