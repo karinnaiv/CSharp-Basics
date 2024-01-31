@@ -1,0 +1,21 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int yearlyfee = int.Parse(Console.ReadLine());
+
+            double sneakers = yearlyfee - 0.4 * yearlyfee;
+            double outfit = sneakers - 0.2 * sneakers;
+            double ball = outfit / 4;
+            double accessories = ball / 5;
+            double expense = yearlyfee + sneakers + outfit + ball + accessories;
+
+
+            Console.WriteLine(expense);
+        }
+    }
+}
