@@ -1,0 +1,25 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int plastic = int.Parse(Console.ReadLine());
+            int paint = int.Parse(Console.ReadLine());
+            int thinner = int.Parse(Console.ReadLine());
+            int hours = int.Parse(Console.ReadLine());
+
+            double plasticSum = (plastic + 2) * 1.5;
+            double paintSum = (paint + 0.10 * paint) * 14.50;
+            double thinnerSum = thinner * 5;
+
+            double sum = plasticSum + paintSum + thinnerSum + 0.40;
+            double workersSum = (sum * 0.30) * hours;
+            double allSum = sum + workersSum;
+
+            Console.WriteLine(allSum);
+        }
+    }
+}
