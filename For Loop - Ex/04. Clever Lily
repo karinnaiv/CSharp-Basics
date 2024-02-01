@@ -1,0 +1,36 @@
+using System;
+
+namespace _04._Clever_Lily
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int age = int.Parse(Console.ReadLine());
+            double dwCost = double.Parse(Console.ReadLine());
+            int toysCost = int.Parse(Console.ReadLine());
+            int sum = 0;
+
+            for(int currentAge=1; currentAge<=age; currentAge++)
+            {
+                if (currentAge % 2 == 0)
+                {
+                    sum += (currentAge / 2 * 10) - 1;
+                }
+                else
+                {
+                    sum += toysCost;
+                }
+            }
+
+            if (dwCost <= sum)
+            {
+                Console.WriteLine($"Yes! {sum-dwCost:f2}");
+            }
+            else
+            {
+                Console.WriteLine($"No! {dwCost-sum:f2}");
+            }
+        }
+    }
+}
