@@ -1,0 +1,59 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string month = Console.ReadLine();
+            int nights = int.Parse(Console.ReadLine());
+            double costSt = 0;
+            double costAp = 0;
+            double totalAp = 0;
+            double totalSt = 0;
+
+            switch (month)
+            {
+                case "May":
+                case "October":
+                    costSt = 50;
+                    costAp = 65;
+                    break;
+                case "June":
+                case"September":
+                    costSt = 75.2;
+                    costAp = 68.7;
+                    break;
+                case "July":
+                case "August":
+                    costSt = 76;
+                    costAp = 77;
+                    break;
+            }
+            totalAp = costAp * nights;
+            totalSt = costSt * nights;
+            if (nights > 14)
+            {
+                if (month == "May" || month == "October")
+                {
+                    totalSt *=0.7;
+                }
+                else if (month == "June" || month == "September")
+                {
+                    totalSt *=0.8;
+                }
+                totalAp *=0.9;
+            }
+            else if (nights > 7) 
+            {
+                if (month == "May" || month == "October")
+                {
+                    totalSt *=0.95;
+                }
+            }
+            Console.WriteLine($"Apartment: {totalAp:f2} lv.");
+            Console.WriteLine($"Studio: {totalSt:f2} lv.");
+        }
+    }
+}
