@@ -1,0 +1,33 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double filmsBudget = double.Parse(Console.ReadLine());
+            int team = int.Parse(Console.ReadLine());
+            double outfitPerPerson = double.Parse(Console.ReadLine());
+
+            double decor = filmsBudget * 10 / 100.0;
+            double allSum = team * outfitPerPerson + decor;
+
+            if (team > 150)
+            {
+                double outfitDis = outfitPerPerson - outfitPerPerson * 10 / 100.0;
+                allSum = team * outfitDis + decor;
+            }
+            if (allSum > filmsBudget)
+            {
+                Console.WriteLine($"Not enough money!");
+                Console.WriteLine($"Wingard needs {allSum - filmsBudget:f2} leva more.");
+            }
+            else if(allSum<=filmsBudget)
+            {
+                Console.WriteLine($"Action!");
+                Console.WriteLine($"Wingard starts filming with {filmsBudget-allSum:f2} leva left.");
+            }
+        }
+    }
+}
