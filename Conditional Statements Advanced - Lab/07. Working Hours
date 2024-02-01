@@ -1,0 +1,42 @@
+using System;
+
+namespace demo
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int hour = int.Parse(Console.ReadLine());
+                string day = Console.ReadLine();
+
+                if (hour <= 18 && hour >= 10 && day == "Monday")
+                {
+                    Console.WriteLine("open");
+                }
+                else if (hour <= 18 && hour >= 10 && day == "Tuesday")
+                {
+                    Console.WriteLine("open");
+                }
+                else if (hour <= 18 && hour >= 10 && day == "Wednesday")
+                {
+                    Console.WriteLine("open");
+                }
+                else if (hour <= 18 && hour >= 10 && day == "Thursday")
+                {
+                    Console.WriteLine("open");
+                }
+                else if (hour <= 18 && hour >= 10 && day == "Friday")
+                {
+                    Console.WriteLine("open");
+                }
+                else if (hour <= 18 && hour >= 10 && day == "Saturday")
+                {
+                    Console.WriteLine("open");
+                }
+                else
+                {
+                    Console.WriteLine("closed");
+                }
+            }
+        }
+    }
