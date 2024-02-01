@@ -1,0 +1,99 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string town = Console.ReadLine();
+            double sale = double.Parse(Console.ReadLine());
+
+            if (town == "Sofia")
+            {
+                if (0 <= sale && sale <= 500)
+                {
+                    double sum = sale * 5 / 100.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (500 < sale && sale <= 1000)
+                {
+                    double sum = sale * 7 / 100.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (1000 < sale && sale <= 10000)
+                {
+                    double sum = sale * 8 / 100.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (sale > 10000)
+                {
+                    double sum = sale * 12 / 100.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (sale < 0)
+                {
+                    Console.WriteLine("error");
+                }
+            }
+            else if (town == "Varna")
+            {
+                if (0 <= sale && sale <= 500)
+                {
+                    double sum = sale * 45 / 1000.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (500 < sale && sale <= 1000)
+                {
+                    double sum = sale * 75 / 1000.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (1000 < sale && sale <= 10000)
+                {
+                    double sum = sale * 10 / 100.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (sale > 10000)
+                {
+                    double sum = sale * 13 / 100.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (sale < 0)
+                {
+                    Console.WriteLine("error");
+                }
+            }
+            else if (town == "Plovdiv")
+            {
+                if (0 <= sale && sale <= 500)
+                {
+                    double sum = sale * 55 / 1000.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (500 < sale && sale <= 1000)
+                {
+                    double sum = sale * 8 / 100.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (1000 < sale && sale <= 10000)
+                {
+                    double sum = sale * 12 / 100.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (sale > 10000)
+                {
+                    double sum = sale * 145 / 1000.0;
+                    Console.WriteLine(sum.ToString("F2"));
+                }
+                else if (sale < 0)
+                {
+                    Console.WriteLine("error");
+                }
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
+        }
+    }
+}
