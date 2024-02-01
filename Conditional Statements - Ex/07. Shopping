@@ -1,0 +1,35 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double petar = double.Parse(Console.ReadLine());
+            int videocard = int.Parse(Console.ReadLine());
+            int procesor = int.Parse(Console.ReadLine());
+            int ram = int.Parse(Console.ReadLine());
+
+            double vcSum = videocard * 250.0;
+            double procesorSum = vcSum * 0.35;
+            double ramSum = vcSum * 0.1;
+
+            double allSum = vcSum + procesorSum * procesor + ramSum * ram;
+
+            if(videocard>procesor)
+            {
+                allSum = allSum * 0.85;
+            }
+
+            if (allSum <= petar) 
+            {
+                Console.WriteLine($"You have {petar - allSum:f2} leva left!");
+            }
+            else
+            {
+                Console.WriteLine($"Not enough money! You need {allSum - petar:f2} leva more!");
+            }
+        }
+    }
+}
