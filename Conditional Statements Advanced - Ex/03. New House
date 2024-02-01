@@ -1,0 +1,95 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string type = Console.ReadLine();
+            int flowers = int.Parse(Console.ReadLine());
+            double money = double.Parse(Console.ReadLine());
+
+            if (type == "Roses")
+            {
+                double cost = flowers * 5;
+                if (flowers > 80)
+                {
+                    cost = cost - (cost * 10 / 100.0);
+                }
+                if (money >= cost)
+                {
+                    Console.WriteLine($"Hey, you have a great garden with {flowers} {type} and {money-cost:f2} leva left.");
+                }
+                else if (money < cost)
+                {
+                    Console.WriteLine($"Not enough money, you need {cost-money:f2} leva more.");
+                }
+            }
+            if (type == "Dahlias")
+            {
+                double cost = flowers * 3.80;
+                if (flowers > 90)
+                {
+                    cost = cost - (cost * 15 / 100.0);
+                }
+                if (money >= cost)
+                {
+                    Console.WriteLine($"Hey, you have a great garden with {flowers} {type} and {money - cost:f2} leva left.");
+                }
+                else if (money < cost)
+                {
+                    Console.WriteLine($"Not enough money, you need {cost - money:f2} leva more.");
+                }
+            }
+            if (type == "Tulips")
+            {
+                double cost = flowers * 2.80;
+                if (flowers > 80)
+                {
+                    cost = cost - (cost * 15 / 100.0);
+                }
+                if (money >= cost)
+                {
+                    Console.WriteLine($"Hey, you have a great garden with {flowers} {type} and {money - cost:f2} leva left.");
+                }
+                else if (money < cost)
+                {
+                    Console.WriteLine($"Not enough money, you need {cost - money:f2} leva more.");
+                }
+            }
+            if (type == "Narcissus")
+            {
+                double cost = flowers * 3;
+                if (flowers < 120)
+                {
+                    cost = cost + (cost * 15 / 100.0);
+                }
+                if (money >= cost)
+                {
+                    Console.WriteLine($"Hey, you have a great garden with {flowers} {type} and {money - cost:f2} leva left.");
+                }
+                else if (money < cost)
+                {
+                    Console.WriteLine($"Not enough money, you need {cost - money:f2} leva more.");
+                }
+            }
+            if (type == "Gladiolus")
+            {
+                double cost = flowers * 2.50;
+                if (flowers < 80)
+                {
+                   cost = cost + (cost * 20 / 100.0);
+                }
+                if (money >= cost)
+                {
+                    Console.WriteLine($"Hey, you have a great garden with {flowers} {type} and {money - cost:f2} leva left.");
+                }
+                else if (money < cost)
+                {
+                    Console.WriteLine($"Not enough money, you need {cost - money:f2} leva more.");
+                }
+            }
+        }
+    }
+}
