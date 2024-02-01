@@ -1,0 +1,57 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double programmersBudget = double.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+            string destination = "";
+            string restType = "";
+
+            if (programmersBudget <= 100)
+            {
+                if (season == "summer")
+                {
+                     restType = "Camp";
+                    programmersBudget = programmersBudget- programmersBudget*70 / 100.0;
+                }
+                else
+                {
+                     restType = "Hotel";
+                    programmersBudget = programmersBudget - programmersBudget * 30 /100.0;
+                }
+                destination = "Bulgaria";
+                Console.WriteLine($"Somewhere in {destination}");
+                Console.WriteLine($"{restType} - {programmersBudget:f2}");
+
+            }
+            else if (programmersBudget <= 1000)
+            {
+                if (season == "summer")
+                {
+                     restType = "Camp";
+                    programmersBudget = programmersBudget - programmersBudget * 60 / 100.0; 
+                }
+                else
+                {
+                     restType = "Hotel";
+                    programmersBudget = programmersBudget - programmersBudget * 20 / 100.0;
+                }
+                destination = "Balkans";
+                Console.WriteLine($"Somewhere in {destination}");
+                Console.WriteLine($"{restType} - {programmersBudget:f2}");
+            }
+            else
+            {
+                destination = "Europe";
+                restType = "Hotel";
+                programmersBudget = programmersBudget - programmersBudget * 10 / 100.0;
+                Console.WriteLine($"Somewhere in {destination}");
+                Console.WriteLine($"{restType} - {programmersBudget:f2}");
+            }
+        }
+    }
+}
