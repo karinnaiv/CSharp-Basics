@@ -1,0 +1,28 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double recordSec = double.Parse(Console.ReadLine());
+            double meters = double.Parse(Console.ReadLine());
+            double secPerMeter = double.Parse(Console.ReadLine());
+
+            double iwan = meters * secPerMeter;
+            double timeLate = Math.Floor(meters / 15);
+            double timeLatee = timeLate * 12.5;
+            iwan = iwan + timeLatee;
+
+            if (iwan<recordSec)
+            {
+                Console.WriteLine($"Yes, he succeeded! The new world record is {iwan:f2} seconds.");
+            }
+            else
+            {
+                Console.WriteLine($"No, he failed! He was {iwan-recordSec:f2} seconds slower.");
+            }
+        }
+    }
+}
