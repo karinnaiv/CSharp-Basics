@@ -1,0 +1,36 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double excursionCost = double.Parse(Console.ReadLine());
+            int puzzle = int.Parse(Console.ReadLine());
+            int dolls = int.Parse(Console.ReadLine());
+            int bears = int.Parse(Console.ReadLine());
+            int minions = int.Parse(Console.ReadLine());
+            int trucks = int.Parse(Console.ReadLine());
+
+            int allToys = puzzle + dolls + bears + minions + trucks;
+            double toysCost = puzzle * 2.6 + dolls * 3 + bears * 4.1 + minions * 8.2 + trucks * 2;
+
+            if(allToys>=50)
+            {
+                toysCost = toysCost-(toysCost * 25 / 100);
+            }
+            toysCost = toysCost - (toysCost * 10 / 100.0);
+
+
+            if (toysCost>=excursionCost)
+            {
+                Console.WriteLine($"Yes! {toysCost-excursionCost:f2} lv left.");
+            }
+            else
+            {
+                Console.WriteLine($"Not enough money! {excursionCost-toysCost:f2} lv needed.");
+            }
+        }
+    }
+}
