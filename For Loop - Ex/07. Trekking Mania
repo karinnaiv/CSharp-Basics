@@ -1,0 +1,46 @@
+using System;
+
+namespace _07._Trekking_Mania
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int groups = int.Parse(Console.ReadLine());
+            int musala = 0, monblan = 0, kilim = 0, k2 = 0, everest = 0;
+            int peopleCount = 0;
+
+            for(int i = 1; i <= groups; i++)
+            {
+                int people = int.Parse(Console.ReadLine());
+                peopleCount += people;
+
+                if (people <= 5)
+                {
+                    musala += people;
+                }
+                else if (people <= 12)
+                {
+                    monblan += people;
+                }
+                else if (people <= 25)
+                {
+                    kilim += people;
+                }
+                else if (people <= 40)
+                {
+                    k2 += people;
+                }
+                else
+                {
+                    everest += people;
+                }
+            }
+            Console.WriteLine($"{musala * 1.0 / peopleCount * 100:f2}%");
+            Console.WriteLine($"{monblan * 1.0 / peopleCount * 100:f2}%");
+            Console.WriteLine($"{kilim * 1.0 / peopleCount * 100:f2}%");
+            Console.WriteLine($"{k2 * 1.0 / peopleCount * 100:f2}%");
+            Console.WriteLine($"{everest * 1.0 / peopleCount * 100:f2}%");
+        }
+    }
+}
