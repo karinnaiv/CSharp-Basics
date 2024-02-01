@@ -1,0 +1,69 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int examHour=int.Parse(Console.ReadLine());
+            int examMin = int.Parse(Console.ReadLine());
+            int arrivalHour=int.Parse(Console.ReadLine());
+            int arrivalMin=int.Parse(Console.ReadLine());
+
+            int totalExamMin = examHour * 60 + examMin;
+            int totalArrivalMin = arrivalHour * 60 + arrivalMin;
+            int differenceInMin=totalExamMin- totalArrivalMin;
+
+            if (differenceInMin >= 0 && differenceInMin <= 30)
+            {
+                Console.WriteLine("On time");
+                Console.WriteLine($"{differenceInMin}minutes before the start");
+            }
+            else if (differenceInMin > 30)
+            {
+                Console.WriteLine("Early");
+
+                if (differenceInMin >= 60)
+                {
+                    int hours = differenceInMin / 60;
+                    int minutes = differenceInMin - hours * 60;
+                    if (minutes < 10)
+                    {
+                        Console.WriteLine($"{hours}:0{minutes} hours before the start");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{hours}:{minutes} hours before the start");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"{differenceInMin} minutes before the start");
+                }
+            }
+            else if (differenceInMin < 0)
+            {
+                Console.WriteLine("Late");
+                differenceInMin = Math.Abs(differenceInMin);
+                if (differenceInMin >= 60)
+                {
+                    int hours = differenceInMin / 60;
+                    int minutes = differenceInMin - hours * 60;
+                    if (minutes < 10)
+                    {
+                        Console.WriteLine($"{hours}:0{minutes} hours after the start");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{hours}:{minutes} hours after the start");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"{differenceInMin} minutes after the start");
+                }
+            }
+        }
+    }
+}
