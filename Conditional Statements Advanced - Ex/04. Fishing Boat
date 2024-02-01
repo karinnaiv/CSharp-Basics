@@ -1,0 +1,52 @@
+using System;
+
+namespace demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int budget = int.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+            int fishersCount = int.Parse(Console.ReadLine());
+
+            int shipCost = season switch
+            {
+                "Spring" => 3000,
+                "Summer" => 4200,
+                "Autumn" => 4200,
+                "Winter" => 2600,
+                _ => 0
+            };
+
+            double totalCost = shipCost;
+
+            if (fishersCount <= 6)
+            {
+                totalCost *= 0.9;
+            }
+            else if (fishersCount >= 7 && fishersCount <= 11)
+            {
+                totalCost *= 0.85;
+            }
+            else
+            {
+                totalCost *= 0.75;
+            }
+
+            if (season != "Autumn" && fishersCount % 2 == 0)
+            {
+                totalCost *= 0.95;
+            }
+
+            if (totalCost <= budget)
+            {
+                Console.WriteLine($"Yes! You have {budget - totalCost:f2} leva left.");
+            }
+            else if (totalCost > budget)
+            {
+                Console.WriteLine($"Not enough money! You need {totalCost - budget:f2} leva.");
+            }
+        }
+    }
+}
