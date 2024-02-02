@@ -1,0 +1,41 @@
+using System;
+
+namespace _04._Sum_of_Two_Numbers
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int first = int.Parse(Console.ReadLine());
+            int second = int.Parse(Console.ReadLine());
+            int num = int.Parse(Console.ReadLine());
+            int result;
+            bool isValid = false;
+            int combinations = 0; 
+
+            for (int x = first; x <= second; x++) 
+            {
+                for (int y = first; y <= second; y++)
+                {
+                    result = x + y;
+                    combinations++;
+
+                    if (num == result)
+                    {
+                        Console.WriteLine($"Combination N:{combinations} ({x} + {y} = {result})");
+                        isValid = true;
+                        break;
+                    }
+                }
+                if(isValid)
+                {
+                    break;
+                }
+            }
+            if (!isValid)
+            {
+                Console.WriteLine($"{combinations} combinations - neither equals {num}");
+            }
+        }
+    }
+}
